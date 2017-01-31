@@ -3,7 +3,7 @@ filetype off
 set langmenu=none
 
 set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 Bundle 'gmarik/Vundle.vim'
 Bundle 'jlanzarotta/bufexplorer'
@@ -34,6 +34,9 @@ if has('macunix')
   Bundle 'vim-erlang/vim-erlang-omnicomplete'
   Bundle 'vim-erlang/vim-erlang-tags'
 endif
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " -------------------------------------
 " BundleMake
@@ -86,11 +89,11 @@ set ttyfast
 set clipboard=unnamed
 
 " убираем менюшки всякие и полосы прокрутки
-set guioptions-=T
-set guioptions-=m
-set guioptions+=lLrRb
-set guioptions-=lLrRb
-set guioptions+=c
+" set guioptions-=T
+" set guioptions-=m
+" set guioptions+=lLrRb
+" set guioptions-=lLrRb
+" set guioptions+=c
 
 " показывает положение курсора всё время
 set ruler
@@ -100,6 +103,7 @@ set showcmd
 
 " вкл относительную нумерацию строк
 " set relativenumber
+set number
 
 " выкл перенос строк
 set nowrap
@@ -152,6 +156,7 @@ exe 'hi! link EnumConstant Boolean'
 " кодировочки
 set encoding=utf-8
 set termencoding=utf-8
+set fileencoding=utf-8
 
 " дополнение команд в менюшке
 set wildmenu
